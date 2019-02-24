@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		499EF7002222C24000720BD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499EF6FF2222C24000720BD5 /* AppDelegate.swift */; };
+		499EF7022222C24000720BD5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 499EF7012222C24000720BD5 /* GameScene.sks */; };
+		499EF7042222C24000720BD5 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 499EF7032222C24000720BD5 /* Actions.sks */; };
+		499EF7062222C24000720BD5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499EF7052222C24000720BD5 /* GameScene.swift */; };
+		499EF7082222C24000720BD5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499EF7072222C24000720BD5 /* GameViewController.swift */; };
+		499EF70B2222C24000720BD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499EF7092222C24000720BD5 /* Main.storyboard */; };
+		499EF70D2222C24300720BD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499EF70C2222C24300720BD5 /* Assets.xcassets */; };
+		499EF7102222C24300720BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499EF70E2222C24300720BD5 /* LaunchScreen.storyboard */; };
+		499EF71B2222C24300720BD5 /* CosmoGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499EF71A2222C24300720BD5 /* CosmoGameTests.swift */; };
+		499EF7262222C24300720BD5 /* CosmoGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499EF7252222C24300720BD5 /* CosmoGameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		499EF7172222C24300720BD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 499EF6F42222C24000720BD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 499EF6FB2222C24000720BD5;
+			remoteInfo = CosmoGame;
+		};
+		499EF7222222C24300720BD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 499EF6F42222C24000720BD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 499EF6FB2222C24000720BD5;
+			remoteInfo = CosmoGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		499EF6FC2222C24000720BD5 /* CosmoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		499EF6FF2222C24000720BD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		499EF7012222C24000720BD5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		499EF7032222C24000720BD5 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		499EF7052222C24000720BD5 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		499EF7072222C24000720BD5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		499EF70A2222C24000720BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		499EF70C2222C24300720BD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		499EF70F2222C24300720BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		499EF7112222C24300720BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		499EF7162222C24300720BD5 /* CosmoGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		499EF71A2222C24300720BD5 /* CosmoGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoGameTests.swift; sourceTree = "<group>"; };
+		499EF71C2222C24300720BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		499EF7212222C24300720BD5 /* CosmoGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		499EF7252222C24300720BD5 /* CosmoGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoGameUITests.swift; sourceTree = "<group>"; };
+		499EF7272222C24300720BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		499EF6F92222C24000720BD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499EF7132222C24300720BD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499EF71E2222C24300720BD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		499EF6F32222C24000720BD5 = {
+			isa = PBXGroup;
+			children = (
+				499EF6FE2222C24000720BD5 /* CosmoGame */,
+				499EF7192222C24300720BD5 /* CosmoGameTests */,
+				499EF7242222C24300720BD5 /* CosmoGameUITests */,
+				499EF6FD2222C24000720BD5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		499EF6FD2222C24000720BD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				499EF6FC2222C24000720BD5 /* CosmoGame.app */,
+				499EF7162222C24300720BD5 /* CosmoGameTests.xctest */,
+				499EF7212222C24300720BD5 /* CosmoGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		499EF6FE2222C24000720BD5 /* CosmoGame */ = {
+			isa = PBXGroup;
+			children = (
+				499EF6FF2222C24000720BD5 /* AppDelegate.swift */,
+				499EF7012222C24000720BD5 /* GameScene.sks */,
+				499EF7032222C24000720BD5 /* Actions.sks */,
+				499EF7052222C24000720BD5 /* GameScene.swift */,
+				499EF7072222C24000720BD5 /* GameViewController.swift */,
+				499EF7092222C24000720BD5 /* Main.storyboard */,
+				499EF70C2222C24300720BD5 /* Assets.xcassets */,
+				499EF70E2222C24300720BD5 /* LaunchScreen.storyboard */,
+				499EF7112222C24300720BD5 /* Info.plist */,
+			);
+			path = CosmoGame;
+			sourceTree = "<group>";
+		};
+		499EF7192222C24300720BD5 /* CosmoGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				499EF71A2222C24300720BD5 /* CosmoGameTests.swift */,
+				499EF71C2222C24300720BD5 /* Info.plist */,
+			);
+			path = CosmoGameTests;
+			sourceTree = "<group>";
+		};
+		499EF7242222C24300720BD5 /* CosmoGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				499EF7252222C24300720BD5 /* CosmoGameUITests.swift */,
+				499EF7272222C24300720BD5 /* Info.plist */,
+			);
+			path = CosmoGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		499EF6FB2222C24000720BD5 /* CosmoGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 499EF72A2222C24300720BD5 /* Build configuration list for PBXNativeTarget "CosmoGame" */;
+			buildPhases = (
+				499EF6F82222C24000720BD5 /* Sources */,
+				499EF6F92222C24000720BD5 /* Frameworks */,
+				499EF6FA2222C24000720BD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CosmoGame;
+			productName = CosmoGame;
+			productReference = 499EF6FC2222C24000720BD5 /* CosmoGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		499EF7152222C24300720BD5 /* CosmoGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 499EF72D2222C24300720BD5 /* Build configuration list for PBXNativeTarget "CosmoGameTests" */;
+			buildPhases = (
+				499EF7122222C24300720BD5 /* Sources */,
+				499EF7132222C24300720BD5 /* Frameworks */,
+				499EF7142222C24300720BD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				499EF7182222C24300720BD5 /* PBXTargetDependency */,
+			);
+			name = CosmoGameTests;
+			productName = CosmoGameTests;
+			productReference = 499EF7162222C24300720BD5 /* CosmoGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		499EF7202222C24300720BD5 /* CosmoGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 499EF7302222C24300720BD5 /* Build configuration list for PBXNativeTarget "CosmoGameUITests" */;
+			buildPhases = (
+				499EF71D2222C24300720BD5 /* Sources */,
+				499EF71E2222C24300720BD5 /* Frameworks */,
+				499EF71F2222C24300720BD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				499EF7232222C24300720BD5 /* PBXTargetDependency */,
+			);
+			name = CosmoGameUITests;
+			productName = CosmoGameUITests;
+			productReference = 499EF7212222C24300720BD5 /* CosmoGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		499EF6F42222C24000720BD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Andrew;
+				TargetAttributes = {
+					499EF6FB2222C24000720BD5 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					499EF7152222C24300720BD5 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 499EF6FB2222C24000720BD5;
+					};
+					499EF7202222C24300720BD5 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 499EF6FB2222C24000720BD5;
+					};
+				};
+			};
+			buildConfigurationList = 499EF6F72222C24000720BD5 /* Build configuration list for PBXProject "CosmoGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 499EF6F32222C24000720BD5;
+			productRefGroup = 499EF6FD2222C24000720BD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				499EF6FB2222C24000720BD5 /* CosmoGame */,
+				499EF7152222C24300720BD5 /* CosmoGameTests */,
+				499EF7202222C24300720BD5 /* CosmoGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		499EF6FA2222C24000720BD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				499EF70B2222C24000720BD5 /* Main.storyboard in Resources */,
+				499EF7022222C24000720BD5 /* GameScene.sks in Resources */,
+				499EF70D2222C24300720BD5 /* Assets.xcassets in Resources */,
+				499EF7102222C24300720BD5 /* LaunchScreen.storyboard in Resources */,
+				499EF7042222C24000720BD5 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499EF7142222C24300720BD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499EF71F2222C24300720BD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		499EF6F82222C24000720BD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				499EF7062222C24000720BD5 /* GameScene.swift in Sources */,
+				499EF7082222C24000720BD5 /* GameViewController.swift in Sources */,
+				499EF7002222C24000720BD5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499EF7122222C24300720BD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				499EF71B2222C24300720BD5 /* CosmoGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499EF71D2222C24300720BD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				499EF7262222C24300720BD5 /* CosmoGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		499EF7182222C24300720BD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 499EF6FB2222C24000720BD5 /* CosmoGame */;
+			targetProxy = 499EF7172222C24300720BD5 /* PBXContainerItemProxy */;
+		};
+		499EF7232222C24300720BD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 499EF6FB2222C24000720BD5 /* CosmoGame */;
+			targetProxy = 499EF7222222C24300720BD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		499EF7092222C24000720BD5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				499EF70A2222C24000720BD5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		499EF70E2222C24300720BD5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				499EF70F2222C24300720BD5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		499EF7282222C24300720BD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		499EF7292222C24300720BD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		499EF72B2222C24300720BD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CosmoGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.CosmoGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		499EF72C2222C24300720BD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CosmoGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.CosmoGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		499EF72E2222C24300720BD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CosmoGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.CosmoGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CosmoGame.app/CosmoGame";
+			};
+			name = Debug;
+		};
+		499EF72F2222C24300720BD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CosmoGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.CosmoGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CosmoGame.app/CosmoGame";
+			};
+			name = Release;
+		};
+		499EF7312222C24300720BD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CosmoGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.CosmoGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CosmoGame;
+			};
+			name = Debug;
+		};
+		499EF7322222C24300720BD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CosmoGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.CosmoGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CosmoGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		499EF6F72222C24000720BD5 /* Build configuration list for PBXProject "CosmoGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				499EF7282222C24300720BD5 /* Debug */,
+				499EF7292222C24300720BD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		499EF72A2222C24300720BD5 /* Build configuration list for PBXNativeTarget "CosmoGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				499EF72B2222C24300720BD5 /* Debug */,
+				499EF72C2222C24300720BD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		499EF72D2222C24300720BD5 /* Build configuration list for PBXNativeTarget "CosmoGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				499EF72E2222C24300720BD5 /* Debug */,
+				499EF72F2222C24300720BD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		499EF7302222C24300720BD5 /* Build configuration list for PBXNativeTarget "CosmoGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				499EF7312222C24300720BD5 /* Debug */,
+				499EF7322222C24300720BD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 499EF6F42222C24000720BD5 /* Project object */;
+}
