@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,82 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="CosmoGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-Z1-xjE">
+                                <rect key="frame" x="313" y="12" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="52L-Wi-pvm"/>
+                                    <constraint firstAttribute="height" constant="46" id="sM7-HS-u1m"/>
+                                </constraints>
+                                <state key="normal" image="pauseImg"/>
+                                <connections>
+                                    <action selector="pauseButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="DQY-od-N02"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bPj-Z1-xjE" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="12" id="AT6-36-Ccy"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="bPj-Z1-xjE" secondAttribute="trailing" constant="16" id="AVv-rD-0EA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4" y="27"/>
+        </scene>
+        <!--Pause View Controller-->
+        <scene sceneID="wTY-lP-xEB">
+            <objects>
+                <viewController storyboardIdentifier="PauseViewController" id="6qH-gb-D3H" customClass="PauseViewController" customModule="CosmoGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.29999999999999999" contentMode="scaleToFill" id="gVW-yY-hrq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PauseImg" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-50-x8H">
+                                <rect key="frame" x="67" y="188" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HRU-50-x8H" secondAttribute="height" multiplier="15:8" id="Xai-B4-z2N"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uP-37-9Ns">
+                                <rect key="frame" x="80" y="520" width="227" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="227" id="Uqg-Ze-w1j"/>
+                                    <constraint firstAttribute="height" constant="94" id="b1D-0o-nBh"/>
+                                </constraints>
+                                <state key="normal" image="PlayButtonImg"/>
+                                <connections>
+                                    <action selector="playButtonPress:" destination="6qH-gb-D3H" eventType="touchUpInside" id="ZSU-6N-ME5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AoI-dp-lzn" firstAttribute="trailing" secondItem="7uP-37-9Ns" secondAttribute="trailing" constant="68" id="0xS-kR-zix"/>
+                            <constraint firstItem="AoI-dp-lzn" firstAttribute="bottom" secondItem="7uP-37-9Ns" secondAttribute="bottom" constant="53" id="33T-Da-RB3"/>
+                            <constraint firstItem="HRU-50-x8H" firstAttribute="top" secondItem="AoI-dp-lzn" secondAttribute="top" constant="168" id="3Sk-R2-gtm"/>
+                            <constraint firstItem="HRU-50-x8H" firstAttribute="leading" secondItem="AoI-dp-lzn" secondAttribute="leading" constant="67" id="Db9-VJ-SxQ"/>
+                            <constraint firstItem="AoI-dp-lzn" firstAttribute="trailing" secondItem="HRU-50-x8H" secondAttribute="trailing" constant="68" id="nIj-MB-eKH"/>
+                            <constraint firstItem="7uP-37-9Ns" firstAttribute="leading" secondItem="AoI-dp-lzn" secondAttribute="leading" constant="80" id="oNR-bg-lj9"/>
+                            <constraint firstItem="7uP-37-9Ns" firstAttribute="top" secondItem="HRU-50-x8H" secondAttribute="bottom" constant="204" id="pVv-ra-WcZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AoI-dp-lzn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18N-U4-CiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861.60000000000002" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PauseImg" width="792" height="183.60000610351562"/>
+        <image name="PlayButtonImg" width="380" height="200"/>
+        <image name="pauseImg" width="46.311557769775391" height="46.311557769775391"/>
+    </resources>
 </document>

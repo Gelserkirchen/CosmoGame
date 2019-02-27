@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -21,7 +22,45 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabel: SKLabelNode!
     var spaceBackground: SKSpriteNode!
     var asteroidLayer: SKNode!
+    var gameIsPaused: Bool = false
+    var starsLayer: SKNode!
+    var spaceShipLayer: SKNode!
+    var musicPlayer: AVAudioPlayer!
     
+    // метод для включения паузы
+    func pauseTheGame() {
+        gameIsPaused = true
+        self.asteroidLayer.isPaused = true
+        physicsWorld.speed = 0
+        starsLayer.isPaused = true
+        musicPlayer.pause()
+    }
+    
+    // метод для снятия с паузы
+    func unpauseTheGame() {
+        gameIsPaused = false
+        self.asteroidLayer.isPaused = false
+        physicsWorld.speed = 1
+        starsLayer.isPaused = false
+        musicPlayer.play()
+    }
+    
+//    func pauseButtonPressed(sender: AnyObject) {
+//        if !gameIsPaused {
+//            pauseTheGame()
+//        } else {
+//            unpauseTheGame()
+//        }
+//    }
+    
+    // метод который вызывает резет
+    func resetTheGame(){
+        score = 0
+        scoreLabel.text = "Score: \(score)"
+        gameIsPaused = false
+        self.asteroidLayer.isPaused = false
+        physicsWorld.speed = 1
+    }
     
     override func didMove(to view: SKView) {
         
@@ -38,7 +77,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         spaceBackground.size = CGSize(width: width + 50, height: height + 50)
         addChild(spaceBackground)
         
-        sleep(4)
+        // stars из эммиттера Stars.sks - это наш класс со звездами
+        let starPath = Bundle.main.path(forResource: "Stars", ofType: "sks")
+        let starsEmitter = NSKeyedUnarchiver.unarchiveObject(withFile: starPath!) as? SKEmitterNode
+        
+        starsEmitter?.zPosition = 1
+        starsEmitter?.position = CGPoint(x: frame.midX, y: frame.height / 2)
+        starsEmitter?.particlePositionRange.dx = frame.width
+        starsEmitter?.advanceSimulationTime(10)
+        starsLayer = SKNode()
+        starsEmitter?.zPosition = 1
+        addChild(starsLayer)
+        
+        starsLayer.addChild(starsEmitter!)
+        
         
         // инициализируем космический корабль и зааем ему физическое тело
         spaceShip = SKSpriteNode(imageNamed: "spaceShipPic")
@@ -56,9 +108,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let colorAction2 = SKAction.colorize(with: .white, colorBlendFactor: 0, duration: 1)
         let colorSequenceAnimation = SKAction.sequence([colorAction1, colorAction2])
         let colorActionRepeat = SKAction.repeatForever(colorSequenceAnimation)
+        
+        
+        
         spaceShip.run(colorActionRepeat)
         
-        addChild(spaceShip)
+        //addChild(spaceShip)
+        // create Layer of Space Ship
+        spaceShipLayer = SKNode()
+        spaceShipLayer.addChild(spaceShip)
+        spaceShipLayer.zPosition = 3
+        spaceShipLayer.position = CGPoint(x: frame.midX, y: frame.height / 4)
+        addChild(spaceShipLayer)
+        
+        //create fire
+        let firePath = Bundle.main.path(forResource: "Fire", ofType: "sks")
+        let fireEmitter = NSKeyedUnarchiver.unarchiveObject(withFile: firePath!) as? SKEmitterNode
+        fireEmitter?.zPosition = 0
+        fireEmitter?.position.y = -40
+        fireEmitter?.targetNode = self
+        spaceShipLayer.addChild(fireEmitter!)
+
         
         asteroidLayer = SKNode()
         asteroidLayer.zPosition = 2
@@ -80,19 +150,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         scoreLabel = SKLabelNode(text: "Score: \(score)")
         scoreLabel.position = CGPoint(x: frame.size.width / scoreLabel.frame.size.width, y: 300)
-//        scoreLabel.position = CGPoint(x: frame.size.width / scoreLabel.frame.size.width, y: frame.size.height - scoreLabel.calculateAccumulatedFrame().height - 15)
+//      scoreLabel.position = CGPoint(x: frame.size.width / scoreLabel.frame.size.width, y: frame.size.height - scoreLabel.calculateAccumulatedFrame().height - 15)
         
         addChild(scoreLabel)
         
         spaceBackground.zPosition = 0
-        spaceShip.zPosition = 1
+        //spaceShip.zPosition = 1
         scoreLabel.zPosition = 3
+        playMusic()
         
     }
     
+    func playMusic(){
+        if let musicPath = Bundle.main.url(forResource: "starSong", withExtension: "mp3"){
+            musicPlayer = try! AVAudioPlayer(contentsOf: musicPath, fileTypeHint: nil)
+            musicPlayer.play()
+        }
+        musicPlayer.numberOfLoops = -1
+        musicPlayer.volume = 0.2
+    }
     
     // функция для перемещения космического корабля
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !gameIsPaused{
         if let touch = touches.first{
             // 3 определяем точку прикосновения
             let touchLocation = touch.location(in: self)
@@ -103,14 +183,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let moveAciton = SKAction.move(to: touchLocation, duration: time)
             moveAciton.timingMode = SKActionTimingMode.easeInEaseOut
             
-            spaceShip.run(moveAciton)
+            spaceShipLayer.run(moveAciton)
             
             let bgMoveAction = SKAction.move(to: CGPoint(x: -touchLocation.x / 100, y: -touchLocation.y / 100), duration: time)
             
             spaceBackground.run(bgMoveAction)
             
-            isPaused = !isPaused
-            
+//            self.asteroidLayer.isPaused = !self.asteroidLayer.isPaused
+//            physicsWorld.speed = 0
+//            pauseTheGame()
+            }
         }
     }
     
@@ -160,7 +242,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didSimulatePhysics() {
-        enumerateChildNodes(withName: "asteroid"){(asteroid, stop) in
+        // слой если у тебя будут дети с таким именем как астероид
+        asteroidLayer.enumerateChildNodes(withName: "asteroid"){(asteroid, stop) in
             let heightScreen = UIScreen.main.bounds.height
             if asteroid.position.y < -heightScreen {
                 asteroid.removeFromParent()
@@ -178,6 +261,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.score = 0
             self.scoreLabel.text = "Score: \(self.score)"
         }
+        
+        let hitSountAction = SKAction.playSoundFileNamed("pew", waitForCompletion: true)
+        run(hitSountAction)
+        
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
